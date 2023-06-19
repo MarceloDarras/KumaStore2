@@ -1,0 +1,39 @@
+{% extends "./base.html" %}
+{% load static %}
+    
+{% block head %}
+    
+{% endblock %}
+
+
+{% block body %}
+  
+  <div class="container">
+    <div class="encabezado">
+      <h1>Bandanas</h1>
+    <br>
+    <h3>¡¡¡Ofrecemos bandanas de muchos tipos!!!</h3>
+    </div>
+    
+    <div class="row">
+      {% for p in prod %}
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="{{p.image_url.url}}" class="card-image" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{p.nombre}}</h5>
+            <p class="card-text">{{p.descripcion}}</p>
+            <p class="carg-text2">{{p.precio}}</p>
+            <button id="card-button" class="boton-item btn btn-primary">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block script %}
+    
+{% endblock %}

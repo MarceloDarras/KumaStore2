@@ -1,0 +1,38 @@
+{% extends "./base.html" %}
+{% load static %}
+    
+{% block head %}
+    
+{% endblock %}
+
+
+{% block body %}
+  
+  <div class="container">
+    <div class="encabezado">
+      <h1>Juguetes</h1>
+      <br>
+      <h3>Para que tu mascota no se aburra</h3>
+      <div class="row">
+        {% for p in prod %}
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="{{p.image_url.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{p.nombre}}</h5>
+              <p class="card-text">{{p.descripcion}}</p>
+              <a href="#" class="btn btn-primary">{{p.precio}}</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block script %}
+    
+{% endblock %}
